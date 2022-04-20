@@ -177,11 +177,11 @@
       {
         "indexed": false,
         "internalType": "uint256",
-        "name": "rewardPerBlock",
+        "name": "rewardPerSecond",
         "type": "uint256"
       }
     ],
-    "name": "PoolRewardPerBlockSet",
+    "name": "PoolRewardPerSecondSet",
     "type": "event"
   },
   {
@@ -738,11 +738,11 @@
       },
       {
         "internalType": "uint256",
-        "name": "rewardPerBlock",
+        "name": "rewardPerSecond",
         "type": "uint256"
       }
     ],
-    "name": "setPoolRewardPerBlock",
+    "name": "setPoolRewardPerSecond",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
