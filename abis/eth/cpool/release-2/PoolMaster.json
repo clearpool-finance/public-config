@@ -118,11 +118,11 @@
       {
         "indexed": false,
         "internalType": "uint256",
-        "name": "newRewardPerBlock",
+        "name": "newRewardPerSecond",
         "type": "uint256"
       }
     ],
-    "name": "RewardPerBlockSet",
+    "name": "RewardPerSecondSet",
     "type": "event"
   },
   {
@@ -168,19 +168,6 @@
     ],
     "name": "Transfer",
     "type": "event"
-  },
-  {
-    "inputs": [],
-    "name": "VERSION",
-    "outputs": [
-      {
-        "internalType": "string",
-        "name": "",
-        "type": "string"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
   },
   {
     "inputs": [
@@ -856,7 +843,7 @@
   },
   {
     "inputs": [],
-    "name": "rewardPerBlock",
+    "name": "rewardPerSecond",
     "outputs": [
       {
         "internalType": "uint256",
@@ -962,11 +949,11 @@
     "inputs": [
       {
         "internalType": "uint256",
-        "name": "rewardPerBlock_",
+        "name": "rewardPerSecond_",
         "type": "uint256"
       }
     ],
-    "name": "setRewardPerBlock",
+    "name": "setRewardPerSecond",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -1107,6 +1094,19 @@
     "name": "transferReserves",
     "outputs": [],
     "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "version",
+    "outputs": [
+      {
+        "internalType": "string",
+        "name": "",
+        "type": "string"
+      }
+    ],
+    "stateMutability": "pure",
     "type": "function"
   },
   {

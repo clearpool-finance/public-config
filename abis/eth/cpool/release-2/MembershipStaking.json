@@ -430,7 +430,12 @@
     "inputs": [
       {
         "internalType": "address",
-        "name": "account",
+        "name": "staker",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "receiver",
         "type": "address"
       },
       {
@@ -439,7 +444,7 @@
         "type": "uint256"
       }
     ],
-    "name": "unlockStake",
+    "name": "unlockAndWithdrawStake",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
