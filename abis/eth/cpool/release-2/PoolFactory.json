@@ -177,11 +177,11 @@
       {
         "indexed": false,
         "internalType": "uint256",
-        "name": "rewardPerSecond",
+        "name": "rewardPerBlock",
         "type": "uint256"
       }
     ],
-    "name": "PoolRewardPerSecondSet",
+    "name": "PoolRewardPerBlockSet",
     "type": "event"
   },
   {
@@ -738,11 +738,11 @@
       },
       {
         "internalType": "uint256",
-        "name": "rewardPerSecond",
+        "name": "rewardPerBlock",
         "type": "uint256"
       }
     ],
-    "name": "setPoolRewardPerSecond",
+    "name": "setPoolRewardPerBlock",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -823,29 +823,6 @@
       }
     ],
     "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "token",
-        "type": "address"
-      },
-      {
-        "internalType": "address",
-        "name": "to",
-        "type": "address"
-      },
-      {
-        "internalType": "uint256",
-        "name": "amount",
-        "type": "uint256"
-      }
-    ],
-    "name": "sweep",
-    "outputs": [],
-    "stateMutability": "nonpayable",
     "type": "function"
   },
   {

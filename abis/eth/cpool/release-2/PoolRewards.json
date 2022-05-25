@@ -118,11 +118,11 @@
       {
         "indexed": false,
         "internalType": "uint256",
-        "name": "newRewardPerSecond",
+        "name": "newRewardPerBlock",
         "type": "uint256"
       }
     ],
-    "name": "RewardPerSecondSet",
+    "name": "RewardPerBlockSet",
     "type": "event"
   },
   {
@@ -630,7 +630,7 @@
   },
   {
     "inputs": [],
-    "name": "rewardPerSecond",
+    "name": "rewardPerBlock",
     "outputs": [
       {
         "internalType": "uint256",
@@ -645,11 +645,11 @@
     "inputs": [
       {
         "internalType": "uint256",
-        "name": "rewardPerSecond_",
+        "name": "rewardPerBlock_",
         "type": "uint256"
       }
     ],
-    "name": "setRewardPerSecond",
+    "name": "setRewardPerBlock",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
