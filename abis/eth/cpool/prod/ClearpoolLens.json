@@ -12,6 +12,19 @@
   },
   {
     "inputs": [],
+    "name": "SECONDS_PER_YEAR",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
     "name": "factory",
     "outputs": [
       {
@@ -24,12 +37,60 @@
     "type": "function"
   },
   {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "cpoolPrice",
+        "type": "uint256"
+      }
+    ],
+    "name": "getAprIndex",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "currencyApr",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "cpoolApr",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
     "inputs": [],
     "name": "getBorrowRateIndex",
     "outputs": [
       {
         "internalType": "uint256",
         "name": "rate",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "poolAddress",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "cpoolPrice",
+        "type": "uint256"
+      }
+    ],
+    "name": "getPoolCpoolApr",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "apr",
         "type": "uint256"
       }
     ],
