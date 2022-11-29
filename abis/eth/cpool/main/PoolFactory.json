@@ -432,6 +432,25 @@
   {
     "inputs": [
       {
+        "internalType": "address",
+        "name": "market",
+        "type": "address"
+      }
+    ],
+    "name": "getPoolsByMarket",
+    "outputs": [
+      {
+        "internalType": "address[]",
+        "name": "",
+        "type": "address[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
         "internalType": "contract IERC20Upgradeable",
         "name": "cpool_",
         "type": "address"
@@ -470,7 +489,7 @@
         "type": "address[]"
       }
     ],
-    "name": "initializeExistingPools",
+    "name": "initializeExistingPoolsByMarket",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -564,6 +583,30 @@
         "internalType": "string",
         "name": "managerSymbol",
         "type": "string"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "marketPools",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
       }
     ],
     "stateMutability": "view",

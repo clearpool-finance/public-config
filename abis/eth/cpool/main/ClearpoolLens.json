@@ -39,35 +39,82 @@
   {
     "inputs": [
       {
+        "internalType": "address[]",
+        "name": "markets",
+        "type": "address[]"
+      },
+      {
         "internalType": "uint256",
         "name": "cpoolPrice",
         "type": "uint256"
       }
     ],
-    "name": "getAprIndex",
+    "name": "getAprIndexByMarket",
     "outputs": [
       {
-        "internalType": "uint256",
-        "name": "currencyApr",
-        "type": "uint256"
+        "components": [
+          {
+            "internalType": "address",
+            "name": "tokenAddress",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "value",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct IClearpoolLens.MarketData[]",
+        "name": "currencyAprs",
+        "type": "tuple[]"
       },
       {
-        "internalType": "uint256",
-        "name": "cpoolApr",
-        "type": "uint256"
+        "components": [
+          {
+            "internalType": "address",
+            "name": "tokenAddress",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "value",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct IClearpoolLens.MarketData[]",
+        "name": "cpoolAprs",
+        "type": "tuple[]"
       }
     ],
     "stateMutability": "view",
     "type": "function"
   },
   {
-    "inputs": [],
-    "name": "getBorrowRateIndex",
+    "inputs": [
+      {
+        "internalType": "address[]",
+        "name": "markets",
+        "type": "address[]"
+      }
+    ],
+    "name": "getBorrowRatesIndexesByMarkets",
     "outputs": [
       {
-        "internalType": "uint256",
-        "name": "rate",
-        "type": "uint256"
+        "components": [
+          {
+            "internalType": "address",
+            "name": "tokenAddress",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "value",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct IClearpoolLens.MarketData[]",
+        "name": "rates",
+        "type": "tuple[]"
       }
     ],
     "stateMutability": "view",
@@ -98,78 +145,186 @@
     "type": "function"
   },
   {
-    "inputs": [],
-    "name": "getSupplyRateIndex",
+    "inputs": [
+      {
+        "internalType": "address[]",
+        "name": "markets",
+        "type": "address[]"
+      }
+    ],
+    "name": "getSupplyRatesIndexesByMarkets",
     "outputs": [
       {
-        "internalType": "uint256",
-        "name": "rate",
-        "type": "uint256"
+        "components": [
+          {
+            "internalType": "address",
+            "name": "tokenAddress",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "value",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct IClearpoolLens.MarketData[]",
+        "name": "rates",
+        "type": "tuple[]"
       }
     ],
     "stateMutability": "view",
     "type": "function"
   },
   {
-    "inputs": [],
-    "name": "getTotalBorrows",
+    "inputs": [
+      {
+        "internalType": "address[]",
+        "name": "markets",
+        "type": "address[]"
+      }
+    ],
+    "name": "getTotalBorrowsByMarkets",
     "outputs": [
       {
-        "internalType": "uint256",
+        "components": [
+          {
+            "internalType": "address",
+            "name": "tokenAddress",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "value",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct IClearpoolLens.MarketData[]",
         "name": "borrows",
-        "type": "uint256"
+        "type": "tuple[]"
       }
     ],
     "stateMutability": "view",
     "type": "function"
   },
   {
-    "inputs": [],
-    "name": "getTotalInterest",
+    "inputs": [
+      {
+        "internalType": "address[]",
+        "name": "markets",
+        "type": "address[]"
+      }
+    ],
+    "name": "getTotalInterestsByMarkets",
     "outputs": [
       {
-        "internalType": "uint256",
-        "name": "interest",
-        "type": "uint256"
+        "components": [
+          {
+            "internalType": "address",
+            "name": "tokenAddress",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "value",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct IClearpoolLens.MarketData[]",
+        "name": "interests",
+        "type": "tuple[]"
       }
     ],
     "stateMutability": "view",
     "type": "function"
   },
   {
-    "inputs": [],
-    "name": "getTotalLiquidity",
+    "inputs": [
+      {
+        "internalType": "address[]",
+        "name": "markets",
+        "type": "address[]"
+      }
+    ],
+    "name": "getTotalLiquidityByMarkets",
     "outputs": [
       {
-        "internalType": "uint256",
+        "components": [
+          {
+            "internalType": "address",
+            "name": "tokenAddress",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "value",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct IClearpoolLens.MarketData[]",
         "name": "liquidity",
-        "type": "uint256"
+        "type": "tuple[]"
       }
     ],
     "stateMutability": "view",
     "type": "function"
   },
   {
-    "inputs": [],
-    "name": "getTotalPrincipal",
+    "inputs": [
+      {
+        "internalType": "address[]",
+        "name": "markets",
+        "type": "address[]"
+      }
+    ],
+    "name": "getTotalPrincipalsByMarkets",
     "outputs": [
       {
-        "internalType": "uint256",
-        "name": "principal",
-        "type": "uint256"
+        "components": [
+          {
+            "internalType": "address",
+            "name": "tokenAddress",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "value",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct IClearpoolLens.MarketData[]",
+        "name": "principals",
+        "type": "tuple[]"
       }
     ],
     "stateMutability": "view",
     "type": "function"
   },
   {
-    "inputs": [],
-    "name": "getTotalReserves",
+    "inputs": [
+      {
+        "internalType": "address[]",
+        "name": "markets",
+        "type": "address[]"
+      }
+    ],
+    "name": "getTotalReservesByMarkets",
     "outputs": [
       {
-        "internalType": "uint256",
+        "components": [
+          {
+            "internalType": "address",
+            "name": "tokenAddress",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "value",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct IClearpoolLens.MarketData[]",
         "name": "reserves",
-        "type": "uint256"
+        "type": "tuple[]"
       }
     ],
     "stateMutability": "view",
