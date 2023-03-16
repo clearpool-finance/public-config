@@ -85,6 +85,31 @@
     "anonymous": false,
     "inputs": [
       {
+        "indexed": false,
+        "internalType": "address",
+        "name": "pool",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "bool",
+        "name": "resolution",
+        "type": "bool"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "winner",
+        "type": "address"
+      }
+    ],
+    "name": "AuctionResolved",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
         "indexed": true,
         "internalType": "address",
         "name": "pool",
@@ -123,6 +148,82 @@
       }
     ],
     "name": "Bid",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "maxAmount",
+        "type": "uint256"
+      }
+    ],
+    "name": "BidIncrementalMaxAmountChanged",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "percent",
+        "type": "uint256"
+      }
+    ],
+    "name": "BidIncrementalPercentChanged",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "pool",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "bidder",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      }
+    ],
+    "name": "BidReturned",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "pool",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "bidder",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      }
+    ],
+    "name": "BidWithdrawn",
     "type": "event"
   },
   {
@@ -243,11 +344,6 @@
     "name": "auctionInfo",
     "outputs": [
       {
-        "internalType": "uint256",
-        "name": "end",
-        "type": "uint256"
-      },
-      {
         "internalType": "uint96",
         "name": "tokenId",
         "type": "uint96"
@@ -260,6 +356,26 @@
       {
         "internalType": "uint256",
         "name": "lastBid",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "lastBlock",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "start",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "end",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "incrementalAmount",
         "type": "uint256"
       }
     ],
@@ -305,6 +421,24 @@
   },
   {
     "inputs": [],
+    "name": "bidIncrementInfo",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "percent",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "maxAmount",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
     "name": "factory",
     "outputs": [
       {
@@ -339,6 +473,24 @@
     "inputs": [
       {
         "internalType": "address",
+        "name": "pool",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      }
+    ],
+    "name": "increaseBid",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
         "name": "factory_",
         "type": "address"
       },
@@ -351,6 +503,23 @@
         "internalType": "uint256",
         "name": "minBidFactor_",
         "type": "uint256"
+      },
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "percent",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "maxAmount",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct Auction.AuctionIncrementInfo",
+        "name": "incrementInfo_",
+        "type": "tuple"
       }
     ],
     "name": "initialize",
@@ -520,6 +689,19 @@
     "inputs": [
       {
         "internalType": "address",
+        "name": "pool",
+        "type": "address"
+      }
+    ],
+    "name": "resolveAuctionWithoutGoverment",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
         "name": "from",
         "type": "address"
       },
@@ -601,17 +783,25 @@
   {
     "inputs": [
       {
-        "internalType": "address",
-        "name": "pool",
-        "type": "address"
-      },
-      {
         "internalType": "uint256",
-        "name": "end",
+        "name": "bidIncrementMaxAmount_",
         "type": "uint256"
       }
     ],
-    "name": "setPoolAuctionEnd",
+    "name": "setBidIncrementalMaxAmount",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "bidIncrementalPercent_",
+        "type": "uint256"
+      }
+    ],
+    "name": "setBidIncrementalPercent",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"

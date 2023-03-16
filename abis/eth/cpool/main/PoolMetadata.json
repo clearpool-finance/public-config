@@ -1,5 +1,57 @@
 [
   {
+    "inputs": [],
+    "name": "AZ",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "CDC",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "borrowed",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "repay",
+        "type": "uint256"
+      }
+    ],
+    "name": "MTB",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "available",
+        "type": "uint256"
+      }
+    ],
+    "name": "NEL",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "OA",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "OG",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "OM",
+    "type": "error"
+  },
+  {
     "anonymous": false,
     "inputs": [
       {
@@ -604,6 +656,19 @@
   {
     "inputs": [],
     "name": "maxInactivePeriod",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "maximumCapacity",
     "outputs": [
       {
         "internalType": "uint256",
