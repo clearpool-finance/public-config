@@ -1017,6 +1017,19 @@
     "type": "function"
   },
   {
+    "inputs": [],
+    "name": "provisionalRepaymentUtilization",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
     "inputs": [
       {
         "internalType": "uint256",
@@ -1186,6 +1199,19 @@
       }
     ],
     "name": "setProvisionalDefaultUtilization",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "provisionalRepaymentUtilization_",
+        "type": "uint256"
+      }
+    ],
+    "name": "setProvisionalRepaymentUtilization",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
