@@ -671,6 +671,11 @@
         "internalType": "contract IERC20Upgradeable",
         "name": "currency_",
         "type": "address"
+      },
+      {
+        "internalType": "bool",
+        "name": "requireKYC",
+        "type": "bool"
       }
     ],
     "name": "initialize",
@@ -725,6 +730,19 @@
         "internalType": "contract IInterestRateModel",
         "name": "",
         "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "kycRequired",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
       }
     ],
     "stateMutability": "view",

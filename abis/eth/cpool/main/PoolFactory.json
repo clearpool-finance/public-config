@@ -266,6 +266,19 @@
     "inputs": [
       {
         "indexed": false,
+        "internalType": "address",
+        "name": "newReader",
+        "type": "address"
+      }
+    ],
+    "name": "QuadrataReaderSet",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
         "internalType": "uint256",
         "name": "factor",
         "type": "uint256"
@@ -364,6 +377,11 @@
         "internalType": "address",
         "name": "currency",
         "type": "address"
+      },
+      {
+        "internalType": "bool",
+        "name": "requireKYC",
+        "type": "bool"
       }
     ],
     "name": "createPool",
@@ -392,6 +410,11 @@
         "internalType": "string",
         "name": "managerSymbol",
         "type": "string"
+      },
+      {
+        "internalType": "bool",
+        "name": "requireKYC",
+        "type": "bool"
       }
     ],
     "name": "createPoolInitial",
@@ -416,6 +439,47 @@
       }
     ],
     "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "lender",
+        "type": "address"
+      }
+    ],
+    "name": "getKYCAttributes",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "bytes32",
+            "name": "value",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "uint256",
+            "name": "epoch",
+            "type": "uint256"
+          },
+          {
+            "internalType": "address",
+            "name": "issuer",
+            "type": "address"
+          }
+        ],
+        "internalType": "struct IQuadPassportStore.Attribute[]",
+        "name": "",
+        "type": "tuple[]"
+      },
+      {
+        "internalType": "uint256",
+        "name": "queriedAttributes",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
@@ -724,6 +788,19 @@
   },
   {
     "inputs": [],
+    "name": "quadrataReader",
+    "outputs": [
+      {
+        "internalType": "contract IQuadReader",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
     "name": "renounceOwnership",
     "outputs": [],
     "stateMutability": "nonpayable",
@@ -896,6 +973,19 @@
       }
     ],
     "name": "setProvisionalRepaymentUtilization",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "reader_",
+        "type": "address"
+      }
+    ],
+    "name": "setQuadrataReader",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
