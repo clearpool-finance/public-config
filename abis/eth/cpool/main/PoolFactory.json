@@ -18,6 +18,19 @@
       {
         "indexed": false,
         "internalType": "address",
+        "name": "newCpoolAddress",
+        "type": "address"
+      }
+    ],
+    "name": "CpoolAddressChanged",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "address",
         "name": "currency",
         "type": "address"
       },
@@ -342,6 +355,19 @@
   {
     "inputs": [],
     "name": "burnStake",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_cpool",
+        "type": "address"
+      }
+    ],
+    "name": "changeCpoolAddress",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
